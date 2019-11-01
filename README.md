@@ -2,6 +2,8 @@
 
 Simple odometry and costmap simulator for testing local and global planners
 
+![Example](doc/example.png)
+
 ## Usage
 
   - Publish a 2D nav goal using Rviz's "2D Nav Goal" tool and clicking somewhere on the map
