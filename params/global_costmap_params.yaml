@@ -1,0 +1,8 @@
+global_costmap:
+  global_frame: map
+  #robot_base_frame: ugv1 # provided as arg in launch file
+  update_frequency: 4.0
+  static_map: true
+  orientation_mode: 2
+  use_dijkstra: True
+

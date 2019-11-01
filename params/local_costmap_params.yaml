@@ -1,0 +1,16 @@
+local_costmap:
+  global_frame: map
+  #robot_base_frame: ugv1 # provided as arg in launch file
+  update_frequency: 4.0
+  publish_frequency: 2.0
+  static_map: true
+  rolling_window: true
+  width: 30.0
+  height: 30.0
+  resolution: 0.5
+
+plugins:
+
+## Static Layer (see link below)
+# https://answers.ros.org/question/255220/is-it-normal-behavior-for-local-planners-to-ignore-static-obstacles-if-no-pointcloud-or-laserscan-data-is-being-published/
+ - {name: static_layer,                 type: "costmap_2d::StaticLayer"}

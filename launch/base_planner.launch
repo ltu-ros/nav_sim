@@ -1,0 +1,26 @@
+<launch>
+    <arg name="ugv_id" default="Polaris" />
+
+    <node pkg="move_base" type="move_base" respawn="false" name="$(arg ugv_id)_move_base" ns="/$(arg ugv_id)" output="screen">
+        <rosparam file="$(find simple_sim)/params/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+        <rosparam file="$(find simple_sim)/params/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find simple_sim)/params/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find simple_sim)/params/global_costmap_params.yaml" command="load" /> 
+        <rosparam file="$(find simple_sim)/params/trajectory_planner.yaml" command="load" />
+
+        <!-- Override values in yaml based on argument -->
+        <param name="global_costmap/robot_base_frame" value="$(arg ugv_id)" />
+        <param name="local_costmap/robot_base_frame" value="$(arg ugv_id)" />
+
+        <param name="base_global_planner" value="global_planner/GlobalPlanner" />
+        <param name="planner_frequency" value="1.0" />
+        <param name="planner_patience" value="5.0" />
+
+        <param name="controller_frequency" value="5.0" />
+        <param name="controller_patience" value="15.0" />
+        <param name="clearing_rotation_allowed" value="false" />
+
+        <remap from="/$(arg ugv_id)/map" to="/map" />
+    </node>
+</launch>
+
