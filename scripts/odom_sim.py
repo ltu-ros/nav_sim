@@ -51,8 +51,8 @@ class Robot:
 
     def __init__(self, x, y, name, speed=1.0):
         self.loc = Odometry()
-        self.loc.header.frame_id = 'map'
-        self.loc.child_frame_id = name
+        self.loc.header.frame_id = global_frame
+        self.loc.child_frame_id = local_frame
         self.vel = Vec(0,0,0)
         self.pos = Vec(x,y,0)
         self.speed = speed
@@ -100,6 +100,10 @@ class Robot:
 if __name__ == '__main__':
     rospy.init_node('odom_sim', anonymous=True)
 
+
+    local_frame = rospy.get_param('~local_frame')
+    global_frame = rospy.get_param('~global_frame')
+
     # Load the name of the robot
     try:
         ugv_id = rospy.get_param('~ugv_id')
@@ -109,7 +113,7 @@ if __name__ == '__main__':
     robot = Robot(-16, -40, name=ugv_id, speed=0.9)
 
     # Robot location publisher
-    pub = rospy.Publisher('/{}/odom'.format(ugv_id), Odometry, queue_size=10)
+    pub = rospy.Publisher('/localization/near_field_odom', Odometry, queue_size=10)
     # cmd_vel subscriber
     sub = rospy.Subscriber('/{}/cmd_vel'.format(ugv_id), Twist, robot.setVel)
     # Location reset subscriber

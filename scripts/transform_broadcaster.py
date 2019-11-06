@@ -18,12 +18,10 @@ def odomCB(msg):
     br.sendTransform((pos.x, pos.y, pos.z),
                      (r.x, r.y, r.z, r.w),
                      msg.header.stamp,
-                     local_frame, global_frame)
+                     msg.child_frame_id, msg.header.frame_id)
 
 if __name__ == '__main__':
     rospy.init_node('transform_broadcaster')
-    local_frame = rospy.get_param('~local_frame')
-    global_frame = rospy.get_param('~global_frame')
     odom_topic = rospy.get_param('~odom_topic')
 
     br = tf.TransformBroadcaster()

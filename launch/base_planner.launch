@@ -9,8 +9,8 @@
         <rosparam file="$(find simple_sim)/params/trajectory_planner.yaml" command="load" />
 
         <!-- Override values in yaml based on argument -->
-        <param name="global_costmap/robot_base_frame" value="$(arg ugv_id)" />
-        <param name="local_costmap/robot_base_frame" value="$(arg ugv_id)" />
+        <param name="global_costmap/robot_base_frame" value="/veh_near_field" />
+        <param name="local_costmap/robot_base_frame" value="/veh_near_field" />
 
         <param name="base_global_planner" value="global_planner/GlobalPlanner" />
         <param name="planner_frequency" value="1.0" />

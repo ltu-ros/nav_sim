@@ -1,11 +1,17 @@
 <launch>
+
+  <node pkg="tf" type="static_transform_publisher" name="veh_near_field_publisher" args="0 0 0 0 0 0 1 /veh_near_field /near_field 100" />
+
+
+
+
+
+
     <arg name="ugv_id" default="Actor" />
     <arg name="planner" /> <!-- Will be prepended to *_planner.launch and included -->
 
     <node name="$(arg ugv_id)_transform_broadcaster" type="transform_broadcaster.py" pkg="simple_sim" output="screen">
-        <param name="local_frame" value="$(arg ugv_id)" />
-        <param name="global_frame" value="map" />
-        <param name="odom_topic" value="$(arg ugv_id)/odom" />
+        <param name="odom_topic" value="/localization/near_field_odom" />
     </node>
 
     <node name="map_server" pkg="map_server" type="map_server" args="$(find simple_sim)/static_map/small_map.yaml"/>
@@ -17,6 +23,8 @@
     </include>
 
     <node type="odom_sim.py" name="polaris_odom_sim" pkg="simple_sim">
+        <param name="local_frame" value="veh_near_field" />
+        <param name="global_frame" value="map" />
         <param name="ugv_id" value="$(arg ugv_id)" />
     </node>
 
