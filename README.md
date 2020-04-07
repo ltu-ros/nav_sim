@@ -4,6 +4,17 @@ Simple odometry and costmap simulator for testing local and global planners
 
 ![Example](doc/example.png)
 
+## Setup
+
+Clone this package into your workspace  
+
+Install dependencies:
+
+```
+rosdep install -y --from-paths . --ignore-src --rosdistro "$ROS_DISTRO"
+```
+
+
 ## Usage
 
   - Publish a 2D nav goal using Rviz's "2D Nav Goal" tool and clicking somewhere on the map

@@ -8,7 +8,7 @@
         <param name="odom_topic" value="$(arg ugv_id)/odom" />
     </node>
 
-    <node name="map_server" pkg="map_server" type="map_server" args="$(find simple_sim)/static_map/small_map.yaml"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find simple_sim)/static_map/costmap.yaml"/>
 
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find simple_sim)/rviz/$(arg ugv_id).rviz" respawn="true" respawn_delay="3" />
 
