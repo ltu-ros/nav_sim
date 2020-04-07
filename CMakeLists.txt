@@ -7,7 +7,6 @@ find_package(catkin
     rospy
     nav_msgs
     geometry_msgs
-    nav_msgs
 )
 
 catkin_package(
