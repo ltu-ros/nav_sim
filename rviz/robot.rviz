@@ -72,7 +72,7 @@ Visualization Manager:
       Shaft Length: 2
       Shaft Radius: 0.30000001192092896
       Shape: Arrow
-      Topic: /Actor/Actor_move_base/current_goal
+      Topic: /robot/robot_move_base/current_goal
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -95,7 +95,7 @@ Visualization Manager:
       Radius: 0.029999999329447746
       Shaft Diameter: 0.10000000149011612
       Shaft Length: 0.10000000149011612
-      Topic: /Actor/Actor_move_base/TebLocalPlannerROS/global_plan
+      Topic: /robot/robot_move_base/TebLocalPlannerROS/global_plan
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -118,7 +118,7 @@ Visualization Manager:
       Radius: 0.029999999329447746
       Shaft Diameter: 0.10000000149011612
       Shaft Length: 0.10000000149011612
-      Topic: /Actor/Actor_move_base/TebLocalPlannerROS/local_plan
+      Topic: /robot/robot_move_base/TebLocalPlannerROS/local_plan
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -134,7 +134,7 @@ Visualization Manager:
       Shaft Length: 0.23000000417232513
       Shaft Radius: 0.009999999776482582
       Shape: Arrow (Flat)
-      Topic: /Actor/Actor_move_base/TebLocalPlannerROS/teb_poses
+      Topic: /robot/robot_move_base/TebLocalPlannerROS/teb_poses
       Unreliable: false
       Value: true
     - Alpha: 0.699999988079071
@@ -143,7 +143,7 @@ Visualization Manager:
       Draw Behind: true
       Enabled: true
       Name: Potential
-      Topic: /Actor/Actor_move_base/GlobalPlanner/potential
+      Topic: /robot/robot_move_base/GlobalPlanner/potential
       Unreliable: false
       Use Timestamp: false
       Value: true
@@ -152,7 +152,7 @@ Visualization Manager:
       Color: 25; 255; 0
       Enabled: true
       Name: Robot Footprint
-      Topic: /Actor/Actor_move_base/global_costmap/footprint
+      Topic: /robot/robot_move_base/global_costmap/footprint
       Unreliable: false
       Value: true
     - Alpha: 0.699999988079071
@@ -161,7 +161,7 @@ Visualization Manager:
       Draw Behind: false
       Enabled: true
       Name: Local Cost
-      Topic: /Actor/Actor_move_base/local_costmap/costmap
+      Topic: /robot/robot_move_base/local_costmap/costmap
       Unreliable: false
       Use Timestamp: false
       Value: true
@@ -171,7 +171,7 @@ Visualization Manager:
       Draw Behind: false
       Enabled: true
       Name: Global Cost
-      Topic: /Actor/Actor_move_base/global_costmap/costmap
+      Topic: /robot/robot_move_base/global_costmap/costmap
       Unreliable: false
       Use Timestamp: false
       Value: true
@@ -206,7 +206,7 @@ Visualization Manager:
         Shaft Length: 1
         Shaft Radius: 0.05000000074505806
         Value: Axes
-      Topic: /Actor/odom
+      Topic: /robot/odom
       Unreliable: false
       Value: true
     - Angle Tolerance: 0.10000000149011612
@@ -240,7 +240,7 @@ Visualization Manager:
         Shaft Length: 1
         Shaft Radius: 0.05000000074505806
         Value: Arrow
-      Topic: /Actor/odom
+      Topic: /robot/odom
       Unreliable: false
       Value: true
     - Alpha: 0.699999988079071
@@ -269,11 +269,11 @@ Visualization Manager:
     - Class: rviz/Measure
     - Class: rviz/SetInitialPose
       Theta std deviation: 0.2617993950843811
-      Topic: /Actor/set_pose
+      Topic: /robot/set_pose
       X std deviation: 0.5
       Y std deviation: 0.5
     - Class: rviz/SetGoal
-      Topic: /Actor/move_base_simple/goal
+      Topic: /robot/move_base_simple/goal
     - Class: rviz/PublishPoint
       Single click: true
       Topic: /clicked_point

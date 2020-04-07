@@ -23,12 +23,12 @@ rosdep install -y --from-paths . --ignore-src --rosdistro "$ROS_DISTRO"
 
 ## Defult Topics
 
-  - By default, everything is launched under the "Actor" namespace
-  - **Odometry**: `/Actor/odom`
+  - By default, everything is launched under the "robot" namespace
+  - **Odometry**: `/robot/odom`
   - **Map**: `/map`
-  - **Steering**: `/Actor/cmd_vel`
-  - **Nav goal**: `/Actor/move_base_simple/goal`
-  - **Set pose of robot**: `/Actor/set_pose`
+  - **Steering**: `/robot/cmd_vel`
+  - **Nav goal**: `/robot/move_base_simple/goal`
+  - **Set pose of robot**: `/robot/set_pose`
 
 ## Dynamic reconfigure
 
