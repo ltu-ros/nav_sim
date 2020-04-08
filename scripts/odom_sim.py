@@ -106,7 +106,7 @@ if __name__ == '__main__':
     except KeyError:
         raise ValueError('odom_sim.py requires "ugv_id" param')
 
-    robot = Robot(-16, -40, name=ugv_id, speed=0.9)
+    robot = Robot(-16, -40, name=ugv_id, speed=2.0)
 
     # Robot location publisher
     pub = rospy.Publisher('/{}/odom'.format(ugv_id), Odometry, queue_size=10)
