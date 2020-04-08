@@ -1,6 +1,6 @@
 <launch>
     <arg name="ugv_id" default="robot" />
-    <arg name="planner" /> <!-- Will be prepended to *_planner.launch and included -->
+    <arg name="planner" default="base" /> <!-- Will be prepended to *_planner.launch and included -->
 
     <node name="$(arg ugv_id)_transform_broadcaster" type="transform_broadcaster.py" pkg="simple_sim" output="screen">
         <param name="local_frame" value="$(arg ugv_id)" />
