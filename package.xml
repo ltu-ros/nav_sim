@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>simple_sim</name>
+  <name>nav_sim</name>
   <version>0.0.0</version>
-  <description>The simple_sim package</description>
+  <description>The nav_sim package</description>
   <maintainer email="npaul@ltu.edu">npaul</maintainer>
 
   <license>TODO</license>

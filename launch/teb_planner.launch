@@ -2,11 +2,11 @@
     <arg name="ugv_id" default="Polaris" />
 
     <node pkg="move_base" type="move_base" respawn="false" name="$(arg ugv_id)_move_base" ns="/$(arg ugv_id)" output="screen">
-        <rosparam file="$(find simple_sim)/params/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
-        <rosparam file="$(find simple_sim)/params/costmap_common_params.yaml" command="load" ns="local_costmap" />
-        <rosparam file="$(find simple_sim)/params/local_costmap_params.yaml" command="load" />
-        <rosparam file="$(find simple_sim)/params/global_costmap_params.yaml" command="load" /> 
-        <rosparam file="$(find simple_sim)/params/teb_local_planner_params.yaml" command="load" />
+        <rosparam file="$(find nav_sim)/params/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+        <rosparam file="$(find nav_sim)/params/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find nav_sim)/params/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find nav_sim)/params/global_costmap_params.yaml" command="load" /> 
+        <rosparam file="$(find nav_sim)/params/teb_local_planner_params.yaml" command="load" />
 
         <!-- Override values in yaml based on argument -->
         <param name="global_costmap/robot_base_frame" value="$(arg ugv_id)" />

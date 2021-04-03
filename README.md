@@ -39,11 +39,11 @@ Launch dynamic reconfigure (`rqt > Plugins > Configuration`) to view the planner
 To run the simulator with ROS's default local planner:
 
 ```
-roslaunch simple_sim test.launch planner:=base
+roslaunch nav_sim test.launch planner:=base
 ```
 
 To run the simulator with TEB local planner:
 
 ```
-roslaunch simple_sim test.launch planner:=teb
+roslaunch nav_sim test.launch planner:=teb
 ```

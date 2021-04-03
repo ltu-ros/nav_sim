@@ -2,21 +2,21 @@
     <arg name="ugv_id" default="robot" />
     <arg name="planner" default="base" /> <!-- Will be prepended to *_planner.launch and included -->
 
-    <node name="$(arg ugv_id)_transform_broadcaster" type="transform_broadcaster.py" pkg="simple_sim" output="screen">
+    <node name="$(arg ugv_id)_transform_broadcaster" type="transform_broadcaster.py" pkg="nav_sim" output="screen">
         <param name="local_frame" value="$(arg ugv_id)" />
         <param name="global_frame" value="map" />
         <param name="odom_topic" value="$(arg ugv_id)/odom" />
     </node>
 
-    <node name="map_server" pkg="map_server" type="map_server" args="$(find simple_sim)/static_map/costmap.yaml"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find nav_sim)/static_map/costmap.yaml"/>
 
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find simple_sim)/rviz/$(arg ugv_id).rviz" respawn="true" respawn_delay="3" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find nav_sim)/rviz/$(arg ugv_id).rviz" respawn="true" respawn_delay="3" />
 
-    <include file="$(find simple_sim)/launch/$(arg planner)_planner.launch">
+    <include file="$(find nav_sim)/launch/$(arg planner)_planner.launch">
         <arg name="ugv_id" value="$(arg ugv_id)" />
     </include>
 
-    <node type="odom_sim.py" name="polaris_odom_sim" pkg="simple_sim">
+    <node type="odom_sim.py" name="polaris_odom_sim" pkg="nav_sim">
         <param name="ugv_id" value="$(arg ugv_id)" />
     </node>
 
