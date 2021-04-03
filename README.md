@@ -1,4 +1,4 @@
-# Simple Odometry and Costmap Simulator
+# Simple Odometry and Costmap Simulator (Nav Sim)
 
 Simple odometry and costmap simulator for testing local and global planners
 
